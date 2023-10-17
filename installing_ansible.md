@@ -1,6 +1,6 @@
 # Guide on Setting up ansible and nodes
 
-1. Create 3 instances on EC2  
+1. Create 3 instances on EC2  (Ansible Controller, app, db)
 2. SSH into each on seperate git bash terminals  
 3. For the Ansible controller enter the following commands:
 ```
@@ -14,18 +14,18 @@ cd ~/.ssh
 ```
 3b. Optional:
 ```
-cd /etc/ansible/
 sudo apt install tree
 ansible --version
+cd /etc/ansible/
 ```
 - Tree will give a better visual aid on the folder structure   
 - --version will show the ansible version.  
-- cd into ansible to find the files for ansible.  
+- cd into ansible folder to find hosts, roles, and config file
 
 
 4. On a new Git Bash Terminal
 ```
-scp -i "~/.ssh/tech254.pem" ~/.ssh/tech254.pem ubuntu@34.243.23.126:~/.ssh
+scp -i "~/.ssh/file.pem" ~/.ssh/file.pem ubuntu@<Public IP>:~/.ssh
 ```
 - This command will securely copy the .pem file to each instance dependant on IP. Complete this for each instance.
 
@@ -39,3 +39,31 @@ sudo chmod 400 file.pem
 ```
 ssh -i "file.pem" ubuntu@<Public DNS>
 ```
+
+sudo ansible web -m ping
+sudo nano hosts
+
+[web]
+
+ec2-instance ansible_host=54.171.81.99 ansible_user=ubuntu ansible_ssh_private_key_file=/home/ubuntu/.ssh/tech254.pem
+
+sudo ansible web -a "uname -a"
+
+sudo nano install-nginx.yml
+
+
+
+Using yml (two spaces for indentation)
+ensure tasks not task
+
+
+### Why ansible
+
+
+### Why aplaybook
+
+
+### benefits
+
+
+### 

@@ -31,7 +31,3 @@ Infrastructure currently on cloud (can be on premises as well), we can use Ansib
 ### What is Ansible?
 
 - Ansible is a Python-based open source command-line IT automation software programme. It is capable of configuring systems, deploying software, and orchestrating complex workflows to support application deployment, system updates, and other tasks.
-
-### Ansible Vault
-
-- With Ansible Vault, you can store sensitive information like passwords or keys in encrypted files as opposed to plaintext in playbooks or roles. The files from the vault can then be shared or added to source control.

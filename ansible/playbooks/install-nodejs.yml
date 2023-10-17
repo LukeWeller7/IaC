@@ -1,0 +1,22 @@
+# Create a playbook to provision installation of nodejs in the web-node
+---
+# Yaml/yml file starts with three dashes
+
+# where do you want to install or run this playboo
+- hosts: web
+
+# find the facts (see the logs) - optional
+  gather_facts: yes
+
+# provide admin access to this playbook - use sudo
+  become: true
+
+# provide the actual instructions - install nginx
+  tasks:
+  - name: Find version 12 of nodejs
+    shell: curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+
+  - name: Install Nodejs
+    apt: pkg=nodejs state=present
+
+# ensure nginx is running/enable
