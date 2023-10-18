@@ -3,6 +3,8 @@
 ## Arcitectural Diagram
 ![](images/ansible.png)
 
+![](images/ansible_diagram_v1.png)
+
 
 ### What is Ansible?
 
