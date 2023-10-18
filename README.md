@@ -22,7 +22,7 @@
 
 - The automated configuration, management, and coordination of computer systems, applications, and services is known as orchestration. Orchestration makes it easier for IT to manage complex tasks and workflows.
 
-### IaC Diagram
+### Example IaC Diagram
 
 ![](images/IaC-diagram.png)
 
