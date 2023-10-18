@@ -1,0 +1,29 @@
+# Create a playbook that will change the BindIP in the db in>
+
+---
+
+# agent node name/ip
+- hosts: app
+
+# gather facts
+  gather_facts: yes
+
+# provide admin access
+  become: true
+
+# provide instructions
+  tasks:
+    - name: install pm2
+      shell: sudo npm install
+    - name: install pm2
+      shell: sudo npm install pm2 -g
+    - name: install git
+      shell: sudo apt install git -y
+#    - name: Copy over app folder
+#      shell: sudo git clone https://github.com/LukeWeller7/>
+    - name: Start app using pm2
+      command: pm2 start app.js
+      args:
+        chdir: /home/ubuntu/testing_scp_gitclone/app
+
+# ensure db is in a running state

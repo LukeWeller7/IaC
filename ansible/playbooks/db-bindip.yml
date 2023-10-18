@@ -1,0 +1,22 @@
+# Create a playbook that will change the BindIP in the db in>
+
+---
+
+# agent node name/ip
+- hosts: db
+
+# gather facts
+  gather_facts: yes
+
+# provide admin access
+  become: true
+
+# provide instructions
+  tasks:
+  - name: change bindIP to 0.0.0.0
+    lineinfile:
+      path: /etc/mongodb.conf
+      regexp: 'bind_ip = 127.0.0.1'
+      line: 'bind_ip = 0.0.0.0'
+
+# ensure db is in a running state

@@ -1,0 +1,20 @@
+# Create a playbook that will change the BindIP in the db in>
+
+---
+
+# agent node name/ip
+- hosts: app
+
+# gather facts
+  gather_facts: yes
+
+# provide admin access
+  become: true
+
+# provide instructions
+  tasks:
+    - name: Create an env var called DB_HOST on app instance
+      ansible.builtin.shell: |
+        export DB_HOST=mongodb://53.212.166.97:27017/posts
+      environment:
+        DB_HOST: mongodb://53.212.166.97:27017/posts

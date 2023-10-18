@@ -12,7 +12,7 @@ sudo apt upgrade -y
 4. For the Ansible controller enter the following commands to set-up:
 ```
 sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible
+sudo apt-add-repository ppa:ansible/ansible # Press Enter
 sudo apt update
 sudo apt install ansible -y
 ```
@@ -51,7 +51,8 @@ cd /etc/ansible
 ```
 sudo nano hosts
 ```
-3. Inside the hosts file, add the endpoints for both app and db. If one option doesn't work, try the other.
+3. Inside the hosts file, add the endpoints for both app and db. If one option doesn't work, try the other.  
+    i. Potential Bocker - Ensure the name of the webhosts are different "ec2-instance" otherwise it will cause errors.
 ```
 [web]
 

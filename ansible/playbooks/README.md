@@ -16,6 +16,8 @@ sudo nano playbookname.yml
 sudo ansible-playbook playbookname.yml
 ```
 
+- Testing installs - After completing an install with playbook, use ansible to test that the installation was successful. (Depends on package to what to input)
+
 ### Example Playbook interface
 ```yaml
 # Create a playbook to provision nginx web server in the web-node
